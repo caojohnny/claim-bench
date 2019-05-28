@@ -1,6 +1,7 @@
 package com.gmail.woodyc40.claimbench;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import org.openjdk.jmh.annotations.Mode;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
@@ -9,6 +10,7 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 import java.io.File;
 import java.net.URL;
 import java.net.URLClassLoader;
+import java.util.concurrent.TimeUnit;
 
 public class ClaimBench extends JavaPlugin {
     @Override
@@ -23,6 +25,8 @@ public class ClaimBench extends JavaPlugin {
         Options options = new OptionsBuilder()
                 .include(Bench.class.getSimpleName())
                 .forks(0)
+                .timeUnit(TimeUnit.NANOSECONDS)
+                .mode(Mode.AverageTime)
                 .build();
 
         try {

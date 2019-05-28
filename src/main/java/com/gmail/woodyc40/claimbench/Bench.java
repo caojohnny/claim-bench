@@ -58,40 +58,40 @@ public class Bench {
     }
 
     @Benchmark
-    public UUID baselineSmall() {
+    public UUID a_baselineSmall() {
         int idx = ThreadLocalRandom.current().nextInt(this.smallObjects.length);
         return this.smallObjects[idx];
     }
 
     @Benchmark
-    public boolean containsSmall() {
+    public boolean a_containsSmall() {
         int idx = ThreadLocalRandom.current().nextInt(this.smallObjects.length);
         UUID uuid = this.smallObjects[idx];
         return this.containsUuid.contains(uuid);
     }
 
     @Benchmark
-    public boolean addSmall() {
+    public boolean a_addSmall() {
         int idx = ThreadLocalRandom.current().nextInt(this.smallObjects.length);
         UUID uuid = this.smallObjects[idx];
         return this.addUuid.add(uuid);
     }
 
     @Benchmark
-    public CraftPlayer baselineLarge() {
+    public CraftPlayer b_baselineLarge() {
         int idx = ThreadLocalRandom.current().nextInt(this.largeObjects.length);
         return this.largeObjects[idx];
     }
 
     @Benchmark
-    public boolean containsLarge() {
+    public boolean b_containsLarge() {
         int idx = ThreadLocalRandom.current().nextInt(this.largeObjects.length);
         CraftPlayer player = this.largeObjects[idx];
         return this.containsPlayer.contains(player);
     }
 
     @Benchmark
-    public boolean addLarge() {
+    public boolean b_addLarge() {
         int idx = ThreadLocalRandom.current().nextInt(this.largeObjects.length);
         CraftPlayer player = this.largeObjects[idx];
         return this.addPlayer.add(player);
