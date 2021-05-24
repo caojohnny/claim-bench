@@ -121,7 +121,7 @@ object, they are all addressed exactly the same way.
 # Compiling
 
 ``` shell
-git clone https://github.com/AgentTroll/claim-bench.git
+git clone https://github.com/caojohnny/claim-bench.git
 cd claim-bench
 mvn clean install
 ```
